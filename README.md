@@ -1,0 +1,1 @@
+omis lab2
