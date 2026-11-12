@@ -1,0 +1,25 @@
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build artifacts
+build/
+dist/
+out/
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.exe
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
