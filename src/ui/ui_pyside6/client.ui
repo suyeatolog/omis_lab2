@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui version="4.0">
+ <class>ClientWindow</class>
+ <widget class="QWidget" name="ClientWindow">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>850</width><height>520</height></rect></property>
+  <property name="windowTitle"><string>Client Panel</string></property>
+  <property name="styleSheet"><string>QWidget { background: white; color: black; font-family: Arial; font-size: 14px; } QLineEdit { border: 1px solid black; padding: 6px; } QPushButton { border: 1px solid black; background: white; padding: 8px; text-align: left; } QPushButton:hover { background-color: #f2f2f2; } QPushButton:pressed { background-color: #e6e6e6; } QFrame#sidebarFrame { border-right: 1px solid black; } QFrame#boxFrame, QFrame#historyFrame, QFrame#settingsBox { border: 1px solid black; }</string></property>
+  <layout class="QHBoxLayout" name="mainLayout">
+   <property name="spacing"><number>0</number></property>
+   <property name="ContentsMargins"><number>0</number><number>0</number><number>0</number><number>0</number></property>
+   <item>
+    <widget class="QFrame" name="sidebarFrame">
+     <property name="minimumSize"><size><width>160</width><height>0</height></size></property>
+     <property name="maximumSize"><size><width>160</width><height>16777215</height></size></property>
+     <layout class="QVBoxLayout" name="sidebarLayout">
+      <item><widget class="QPushButton" name="btnCollapse"><property name="text"><string>☰  collapse</string></property></widget></item>
+      <item><widget class="QPushButton" name="btnNavFind"><property name="text"><string>□  find package</string></property><property name="styleSheet"><string>QPushButton { background: #f5c28b; } QPushButton:hover { background: #f0b06a; }</string></property></widget></item>
+      <item><widget class="QPushButton" name="btnNavMy"><property name="text"><string>□  my package</string></property></widget></item>
+      <item><widget class="QPushButton" name="btnNavSettings"><property name="text"><string>○  settings</string></property></widget></item>
+      <item><spacer name="vSpacer"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property></spacer></item>
+      <item><widget class="QPushButton" name="btnLogout"><property name="text"><string>log out</string></property><property name="styleSheet"><string>border: none; font-style: italic; text-align: center;</string></property></widget></item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackedMain">
+     <widget class="QWidget" name="pageFind">
+      <layout class="QVBoxLayout" name="findLayout">
+       <property name="ContentsMargins"><number>30</number><number>20</number><number>30</number><number>20</number></property>
+       <item>
+        <layout class="QHBoxLayout" name="searchBarLayout">
+         <item><widget class="QLineEdit" name="editSearchNumber"><property name="minimumSize"><size><width>0</width><height>36</height></size></property><property name="text"><string>123456</string></property></widget></item>
+         <item><widget class="QPushButton" name="btnFind"><property name="minimumSize"><size><width>80</width><height>36</height></size></property><property name="text"><string>FIND</string></property><property name="styleSheet"><string>font-weight: bold; text-align: center;</string></property></widget></item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QStackedWidget" name="stackedFindResult">
+         <widget class="QWidget" name="subPageEmpty">
+          <layout class="QVBoxLayout"><item><widget class="QFrame" name="boxFrame" /></item></layout>
+         </widget>
+         <widget class="QWidget" name="subPageNotFound">
+          <layout class="QVBoxLayout">
+           <item>
+            <widget class="QFrame" name="boxFrame">
+             <layout class="QVBoxLayout"><item><widget class="QLabel" name="lblNotFound"><property name="text"><string>NOT FOUND</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>font-size: 28px; font-style: italic;</string></property></widget></item></layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="subPageFound">
+          <layout class="QVBoxLayout">
+           <item>
+            <widget class="QFrame" name="boxFrame">
+             <layout class="QHBoxLayout">
+              <property name="ContentsMargins"><number>25</number><number>25</number><number>25</number><number>25</number></property>
+              <item>
+               <layout class="QVBoxLayout">
+                <item><widget class="QLabel" name="lblBoxIcon"><property name="minimumSize"><size><width>220</width><height>220</height></size></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>border: none;</string></property><property name="pixmap"><pixmap>ui/assets/cube.png</pixmap></property><property name="scaledContents"><bool>true</bool></property></widget></item>
+                <item><widget class="QPushButton" name="btnToTrack"><property name="text"><string>to track</string></property><property name="styleSheet"><string>text-align: center; font-size: 16px;</string></property></widget></item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout">
+                <item><widget class="QLabel" name="lblPackageInfo"><property name="text"><string>id: ...
+
+creation date: ...
+sender: ...
+current status: ...</string></property></widget></item>
+                <item>
+                 <widget class="QFrame" name="historyFrame">
+                  <layout class="QVBoxLayout">
+                   <item><widget class="QLabel" name="lblHistHeader"><property name="text"><string>history</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>font-weight: bold;</string></property></widget></item>
+                   <item><widget class="QTextBrowser" name="txtHistory"><property name="styleSheet"><string>border: none;</string></property><property name="plainText"><string>date update: ...
+location type: ...
+adress: ...
+status: ...
+
+date update: ...
+location type: ...</string></property></widget></item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageMyPackages">
+      <layout class="QVBoxLayout">
+       <property name="ContentsMargins"><number>30</number><number>25</number><number>30</number><number>25</number></property>
+       <item>
+        <widget class="QListWidget" name="listMyPackages">
+         <property name="styleSheet"><string>QListWidget { border: 1px solid black; padding: 15px; font-size: 16px; } QListWidget::item { padding: 12px; }</string></property>
+         <item><property name="text"><string>   ID ...
+       create date ...</string></property><property name="icon"><iconset><normaloff>ui/assets/cube.png</normaloff><normalon /></iconset></property></item>
+         <item><property name="text"><string>   ID ...
+       create date ...</string></property><property name="icon"><iconset><normaloff>ui/assets/cube.png</normaloff><normalon /></iconset></property></item>
+         <item><property name="text"><string>   ID ...
+       create date ...</string></property><property name="icon"><iconset><normaloff>ui/assets/cube.png</normaloff><normalon /></iconset></property></item>
+        <property name="iconSize"><size><width>42</width><height>42</height></size></property></widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageSettings">
+      <layout class="QVBoxLayout">
+       <property name="ContentsMargins"><number>30</number><number>25</number><number>30</number><number>25</number></property>
+       <item>
+        <widget class="QFrame" name="settingsBox">
+         <layout class="QVBoxLayout">
+          <property name="ContentsMargins"><number>15</number><number>15</number><number>15</number><number>15</number></property>
+          <item><widget class="QLabel" name="lblSetTitle"><property name="minimumSize"><size><width>0</width><height>36</height></size></property><property name="text"><string>Change account data</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>background: #efefef; border: 1px solid black; font-size: 16px;</string></property></widget></item>
+          <item>
+           <layout class="QGridLayout">
+            <item row="0" column="0"><widget class="QLineEdit" name="editSetName"><property name="placeholderText"><string>Name: ...</string></property></widget></item>
+            <item row="0" column="1"><widget class="QLineEdit" name="editSetSecondName"><property name="placeholderText"><string>Second name: ...</string></property></widget></item>
+            <item row="1" column="0"><widget class="QLineEdit" name="editSetUsername"><property name="placeholderText"><string>Username: ...</string></property></widget></item>
+            <item row="1" column="1"><widget class="QLineEdit" name="editSetEmail"><property name="placeholderText"><string>Email: ...</string></property></widget></item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout">
+            <item><widget class="QLineEdit" name="editSetPassword"><property name="placeholderText"><string>New password:</string></property></widget></item>
+            <item><widget class="QPushButton" name="btnUpdateAccount"><property name="minimumSize"><size><width>220</width><height>34</height></size></property><property name="text"><string>UPDATE</string></property><property name="styleSheet"><string>QPushButton { font-weight: bold; text-align: center; } QPushButton:hover { background-color: #fce0c5; }</string></property></widget></item>
+           </layout>
+          </item>
+          <item><widget class="QPushButton" name="btnChangeTheme"><property name="minimumSize"><size><width>0</width><height>36</height></size></property><property name="text"><string>Change theme ⇄</string></property><property name="styleSheet"><string>QPushButton { background: #efefef; border: 1px solid black; text-align: center; font-size: 16px; } QPushButton:hover { background: #e0e0e0; } QPushButton:pressed { background: #d0d0d0; }</string></property></widget></item>
+          <item><widget class="QLabel" name="lblLang"><property name="minimumSize"><size><width>0</width><height>36</height></size></property><property name="text"><string>Change language</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>background: #efefef; border: 1px solid black; font-size: 16px;</string></property></widget></item>
+          <item>
+           <layout class="QHBoxLayout">
+            <item><widget class="QLineEdit" name="editLang"><property name="text"><string>Language: EN</string></property><property name="readOnly"><bool>true</bool></property></widget></item>
+            <item><widget class="QPushButton" name="btnLangDrop"><property name="maximumSize"><size><width>60</width><height>34</height></size></property><property name="text"><string>⇩</string></property><property name="styleSheet"><string>QPushButton { text-align: center; font-size: 18px; }</string></property></widget></item>
+           </layout>
+          </item>
+          <item><spacer name="vSpSet"><property name="orientation"><enum>Qt::Vertical</enum></property></spacer></item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>

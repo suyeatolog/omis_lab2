@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RegisterWindow</class>
+ <widget class="QWidget" name="RegisterWindow">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>600</width><height>620</height></rect></property>
+  <property name="windowTitle"><string>Registration</string></property>
+  <property name="styleSheet"><string>QWidget { background: white; color: black; font-family: Arial; font-size: 14px; } QLineEdit { border: 1px solid black; padding: 6px; font-family: monospace; font-size: 15px; } QPushButton { border: 1px solid black; background: white; padding: 8px; font-weight: bold; } QPushButton:hover { background-color: #f2f2f2; } QPushButton:pressed { background-color: #e6e6e6; }</string></property>
+  <layout class="QHBoxLayout" name="mainLayout">
+   <property name="ContentsMargins"><number>80</number><number>30</number><number>80</number><number>30</number></property>
+   <item>
+    <layout class="QVBoxLayout" name="formLayout">
+     <item><widget class="QLabel" name="l1"><property name="text"><string>username</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>font-size: 18px; font-family: monospace;</string></property></widget></item>
+     <item><widget class="QLineEdit" name="editUsername"><property name="text"><string>degus_admin</string></property></widget></item>
+     <item><widget class="QLabel" name="l2"><property name="text"><string>email</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>font-size: 18px; font-family: monospace;</string></property></widget></item>
+     <item><widget class="QLineEdit" name="editEmail"><property name="text"><string>degus@gmail.com</string></property></widget></item>
+     <item><widget class="QLabel" name="l3"><property name="text"><string>name</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>font-size: 18px; font-family: monospace;</string></property></widget></item>
+     <item><widget class="QLineEdit" name="editName"><property name="text"><string>de</string></property></widget></item>
+     <item><widget class="QLabel" name="l4"><property name="text"><string>second name</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>font-size: 18px; font-family: monospace;</string></property></widget></item>
+     <item><widget class="QLineEdit" name="editSecondName"><property name="text"><string>gus</string></property></widget></item>
+     <item><widget class="QLabel" name="l5"><property name="text"><string>Password</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>font-size: 18px; font-family: monospace;</string></property></widget></item>
+     <item><widget class="QLineEdit" name="editPassword"><property name="text"><string>*******</string></property></widget></item>
+     <item><widget class="QLabel" name="l6"><property name="text"><string>Password again</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>font-size: 18px; font-family: monospace;</string></property></widget></item>
+     <item><widget class="QLineEdit" name="editPasswordAgain"><property name="text"><string>*******</string></property></widget></item>
+     <item>
+      <layout class="QHBoxLayout" name="bottomLayout">
+       <item><widget class="QCheckBox" name="chkRemember"><property name="text"><string>Remember me</string></property></widget></item>
+       <item><spacer name="hSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+       <item><widget class="QPushButton" name="btnRegister"><property name="minimumSize"><size><width>120</width><height>45</height></size></property><property name="text"><string>Regisration</string></property><property name="styleSheet"><string>QPushButton { font-weight: bold; } QPushButton:hover { background-color: #fce0c5; }</string></property></widget></item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="switchLayout">
+     <property name="spacing"><number>0</number></property>
+     <item><widget class="QPushButton" name="btnGoReg"><property name="maximumSize"><size><width>40</width><height>80</height></size></property><property name="text"><string>R&#10;E&#10;G</string></property><property name="styleSheet"><string>QPushButton { background: black; color: white; border: 1px solid black; } QPushButton:hover { background: #333333; }</string></property></widget></item>
+     <item><widget class="QPushButton" name="btnGoLog"><property name="maximumSize"><size><width>40</width><height>80</height></size></property><property name="text"><string>L&#10;O&#10;G</string></property><property name="styleSheet"><string>QPushButton { background: white; color: black; border: 1px solid black; } QPushButton:hover { background: #f2f2f2; }</string></property></widget></item>
+     <item><spacer name="vSpacer"><property name="orientation"><enum>Qt::Vertical</enum></property></spacer></item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+</ui>

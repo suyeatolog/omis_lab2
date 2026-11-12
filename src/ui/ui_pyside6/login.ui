@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoginWindow</class>
+ <widget class="QWidget" name="LoginWindow">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>600</width><height>400</height></rect></property>
+  <property name="windowTitle"><string>Login</string></property>
+  <property name="styleSheet"><string>QWidget { background: white; color: black; font-family: Arial; font-size: 14px; } QLineEdit { border: 1px solid black; padding: 6px; font-family: monospace; font-size: 16px; } QPushButton { border: 1px solid black; background: white; padding: 8px; font-weight: bold; } QPushButton:hover { background-color: #f2f2f2; } QPushButton:pressed { background-color: #e6e6e6; }</string></property>
+  <layout class="QHBoxLayout" name="mainLayout">
+   <property name="ContentsMargins"><number>80</number><number>50</number><number>80</number><number>50</number></property>
+   <item>
+    <layout class="QVBoxLayout" name="formLayout">
+     <item><widget class="QLabel" name="lblUser"><property name="text"><string>username</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>font-size: 20px; font-family: monospace;</string></property></widget></item>
+     <item><widget class="QLineEdit" name="editUsername"><property name="text"><string>degus_admin</string></property></widget></item>
+     <item><widget class="QLabel" name="lblPass"><property name="text"><string>Password</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>font-size: 20px; font-family: monospace;</string></property></widget></item>
+     <item><widget class="QLineEdit" name="editPassword"><property name="text"><string>*******</string></property></widget></item>
+     <item>
+      <layout class="QHBoxLayout" name="bottomLayout">
+       <item><widget class="QCheckBox" name="chkRemember"><property name="text"><string>Remember me</string></property></widget></item>
+       <item><spacer name="hSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+       <item><widget class="QPushButton" name="btnLogin"><property name="minimumSize"><size><width>120</width><height>50</height></size></property><property name="text"><string>LOG IN</string></property><property name="styleSheet"><string>QPushButton { font-weight: bold; } QPushButton:hover { background-color: #fce0c5; }</string></property></widget></item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="switchLayout">
+     <property name="spacing"><number>0</number></property>
+     <item><widget class="QPushButton" name="btnGoReg"><property name="maximumSize"><size><width>40</width><height>80</height></size></property><property name="text"><string>R&#10;E&#10;G</string></property><property name="styleSheet"><string>QPushButton { background: white; color: black; border: 1px solid black; } QPushButton:hover { background: #f2f2f2; }</string></property></widget></item>
+     <item><widget class="QPushButton" name="btnGoLog"><property name="maximumSize"><size><width>40</width><height>80</height></size></property><property name="text"><string>L&#10;O&#10;G</string></property><property name="styleSheet"><string>QPushButton { background: black; color: white; border: 1px solid black; } QPushButton:hover { background: #333333; }</string></property></widget></item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+</ui>
